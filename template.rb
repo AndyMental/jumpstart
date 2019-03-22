@@ -272,7 +272,7 @@ after_bundle do
   rails_command "db:migrate"
 
   # Migrations must be done before this
-  add_administrate
+  rails_command("add_administrate") if yes?("Do you need Administrate Setup?")
 
   # Commit everything to git
   git :init
